@@ -37,3 +37,11 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+// É preciso declarar isso para que o compilador do Typescript não impessa
+// o import desse modulo nos Apps
+declare module "@synchro/utils" {
+  let emitEvent: any;
+
+  export { emitEvent };
+}

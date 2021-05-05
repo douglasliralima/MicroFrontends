@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Parcel from "single-spa-react/parcel"; // Componente do Single SPA que sabe renderizar outros parcels
 import { mountRootParcel } from "single-spa";
 import { v4 as uuid } from "uuid";
+import { emitEvent } from "@synchro/utils";
 
 const App = ({ name }) => {
   const [task, updateTask] = useState("");
@@ -12,17 +13,13 @@ const App = ({ name }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Previne que a página não recarregue por padrão
-    dispatchEvent(
-      // Evento customizado com o nome @synchro/react-route/todo/add-task
-      // e com um atributo detail que possui um id gerado pelo uuid e
-      // a task digitada no input que é exibido na tela
-      new CustomEvent("@synchro/react-route/todo/add-task", {
-        detail: {
-          id: uuid(),
-          describe: task,
-        },
-      })
-    );
+    // Evento customizado com o nome @synchro/react-route/todo/add-task
+    // e com um atributo detail que possui um id gerado pelo uuid e
+    // a task digitada no input que é exibido na tela
+    emitEvent("@synchro/react-route/todo/add-task", {
+      id: uuid(),
+      describe: task,
+    });
     updateTask("");
   };
 
