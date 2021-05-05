@@ -17,7 +17,8 @@
         "imports": {
           "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
           "react": "https://unpkg.com/react@17/umd/react.production.min.js",
-          "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+          "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js",
+          "react-router-dom": "https://unpkg.com/react-router-dom@4.2.2/umd/react-router-dom.min.js"
         }
       }
     </script>
@@ -29,18 +30,10 @@
 
     <!-- Aqui é definido o import map local da aplicação -->
     <% if (isLocal) { %>
-    <script type="systemjs-importmap">
-      {
-        "imports": {
-          "@synchro/root-config": "//localhost:9000/synchro-root-config.js",
-          "@synchro/react-single": "//localhost:8050/synchro-react-single.js",
-          "@synchro/react-multiples": "//localhost:8051/synchro-react-multiples.js",
-          "@synchro/react-parcel": "//localhost:8052/synchro-react-parcel.js",
-          "@synchro/react-route": "//localhost:8053/synchro-react-route.js",
-          "@synchro/utils": "//localhost:8054/synchro-utils.js"
-        }
-      }
-    </script>
+    <script
+      type="systemjs-importmap"
+      src="https://synchro-microfrontend-poc.sfo3.digitaloceanspaces.com/importmap.development.json"
+    ></script>
     <% } %>
 
     <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>

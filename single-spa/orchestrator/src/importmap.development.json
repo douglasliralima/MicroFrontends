@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@synchro/root-config": "http://localhost:9000/synchro-root-config.js",
+    "@synchro/react-single": "http://localhost:8050/synchro-react-single.js",
+    "@synchro/react-multiples": "http://localhost:8051/synchro-react-multiples.js",
+    "@synchro/react-parcel": "http://localhost:8052/synchro-react-parcel.js",
+    "@synchro/react-route": "http://localhost:8053/synchro-react-route.js",
+    "@synchro/utils": "http://localhost:8054/synchro-utils.js",
+    "@synchro/react-lazy": "http://localhost:8055/synchro-react-lazy.js",
+    "@synchro/react-header": "http://localhost:8056/synchro-react-header.js"
+  }
+}

@@ -37,6 +37,12 @@ registerApplication({
 });
 
 registerApplication({
+  name: "@synchro/react-lazy",
+  app: () => System.import("@synchro/react-lazy"),
+  activeWhen: (location) => location.pathname.startsWith("/react-lazy"),
+});
+
+registerApplication({
   name: "@synchro/react-parcel",
   app: () => System.import("@synchro/react-parcel"),
   activeWhen: (location) => location.pathname === "/react-parcel",
@@ -46,6 +52,12 @@ registerApplication({
   name: "@synchro/react-route",
   app: () => System.import("@synchro/react-route"),
   activeWhen: (location) => location.pathname === "/react-route",
+});
+
+registerApplication({
+  name: "@synchro/react-header",
+  app: () => System.import("@synchro/react-header"),
+  activeWhen: ["/"],
 });
 
 // Essa função é o que de fato começa a montar os frontends da página
