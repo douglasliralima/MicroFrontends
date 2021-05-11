@@ -11,11 +11,14 @@
       content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"
     />
     <meta name="importmap-type" content="systemjs-importmap" />
-    <!-- Aqui é definido o import map da aplicação, para utilizar um desses imports é feito System.import('@synchro/root-config') -->
+    <!-- Aqui é definido o import map da aplicação global, para utilizar um desses imports é feito System.import('@synchro/root-config') -->
     <script type="systemjs-importmap">
       {
         "imports": {
-          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+          "react": "https://unpkg.com/react@17/umd/react.production.min.js",
+          "react-dom": "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js",
+          "react-router-dom": "https://unpkg.com/react-router-dom@4.2.2/umd/react-router-dom.min.js"
         }
       }
     </script>
@@ -25,14 +28,12 @@
       as="script"
     />
 
+    <!-- Aqui é definido o import map local da aplicação -->
     <% if (isLocal) { %>
-    <script type="systemjs-importmap">
-      {
-        "imports": {
-          "@synchro/root-config": "//localhost:9000/synchro-root-config.js"
-        }
-      }
-    </script>
+    <script
+      type="systemjs-importmap"
+      src="https://synchro-microfrontend-poc.sfo3.digitaloceanspaces.com/importmap.development.json"
+    ></script>
     <% } %>
 
     <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
