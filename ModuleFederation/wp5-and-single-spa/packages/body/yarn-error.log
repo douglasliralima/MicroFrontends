@@ -1,0 +1,31 @@
+Arguments: 
+  /home/dfll/.nvm/versions/node/v14.15.5/bin/node /home/dfll/.nvm/versions/node/v14.15.5/bin/yarn tsc --init
+
+PATH: 
+  /home/dfll/.sdkman/candidates/gradle/current/bin:/home/dfll/.nvm/versions/node/v14.15.5/bin:/home/dfll/.zinit/polaris/bin:/home/dfll/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.5
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/dfll/Documents/MicroFrontends/ModuleFederation/wp5-and-single-spa/packages/body/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/dfll/.nvm/versions/node/v14.15.5/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/dfll/.nvm/versions/node/v14.15.5/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/dfll/.nvm/versions/node/v14.15.5/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
